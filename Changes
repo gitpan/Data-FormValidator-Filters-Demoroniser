@@ -1,0 +1,5 @@
+# Changes log for Data::FormValidator::Filters::Demoroniser
+
+0.01    10/08/2009
+        - Initial release.
+	- inspired by the demoroniser script
