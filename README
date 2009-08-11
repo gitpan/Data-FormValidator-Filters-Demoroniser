@@ -8,7 +8,7 @@ characters to normal characters from a string in form field values.
 
 DEPENDENCIES
 
-  Encode::ZapCP1252   >= 0
+  Text::Demoroniser   >= 0
 
 Although not exactly a dependency, the following was the intended target for
 this distribution:

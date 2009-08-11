@@ -4,7 +4,7 @@ WriteMakefile(
     'VERSION_FROM'	=> 'lib/Data/FormValidator/Filters/Demoroniser.pm',
     'PREREQ_PM'		=> {
 
-        Encode::ZapCP1252   => 0,
+        Text::Demoroniser   => 0,
 		Test::More	        => 0.70,	# for testing
 	},
 	NO_META			=> 1,

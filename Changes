@@ -1,5 +1,9 @@
 # Changes log for Data::FormValidator::Filters::Demoroniser
 
+0.02    11/08/2009
+	- abstracted guts out into Text::Demoroniser as suggested by Brian 
+	  Cassidy, for use by other non-DFV modules and applications.
+
 0.01    10/08/2009
         - Initial release.
 	- inspired by the demoroniser script

@@ -10,12 +10,12 @@ my %examples = (
     ''          => [ '', '' ],
 );
 
-my $sub = demoroniser();
-is(ref($sub), 'CODE', 'demoroniser returns a code block');
-$sub = demoroniser_utf8();
-is(ref($sub), 'CODE', 'demoroniser_utf8 returns a code block');
+my $sub1 = demoroniser();
+is(ref($sub1), 'CODE', 'demoroniser returns a code block');
+my $sub2 = demoroniser_utf8();
+is(ref($sub2), 'CODE', 'demoroniser_utf8 returns a code block');
 
 for my $ex (keys %examples) {
-    is(Data::FormValidator::Filters::Demoroniser::_demoroniser($ex),      $examples{$ex}->[0],"_demoroniser returns valid ASCII string for '$ex'");
-    is(Data::FormValidator::Filters::Demoroniser::_demoroniser_utf8($ex), $examples{$ex}->[1],"_demoroniser_utf8 returns valid UTF8 string for '$ex'");
+    is($sub1->($ex), $examples{$ex}->[0],"_demoroniser returns valid ASCII string for '$ex'");
+    is($sub2->($ex), $examples{$ex}->[1],"_demoroniser_utf8 returns valid UTF8 string for '$ex'");
 }

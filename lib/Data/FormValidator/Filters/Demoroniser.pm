@@ -2,11 +2,11 @@ package Data::FormValidator::Filters::Demoroniser;
 
 use strict;
 use vars qw( $VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS );
-use Encode::ZapCP1252;
+use Text::Demoroniser;
 
 BEGIN {
 	require Exporter;
-	$VERSION = '0.01';
+	$VERSION = '0.02';
 	@ISA = qw( Exporter );
 	@EXPORT = qw();
 	%EXPORT_TAGS = (
@@ -16,63 +16,11 @@ BEGIN {
 }
 
 sub demoroniser {
-	return sub { return _demoroniser( shift ) };
-}
-
-sub _demoroniser {
-	my $str	= shift;
-    return  unless(defined $str);
-
-	$str =~ s/\xE2\x80\x9A/,/g;		# 82 - SINGLE LOW-9 QUOTATION MARK
-	$str =~ s/\xE2\x80\x9E/,,/g;	# 84 - DOUBLE LOW-9 QUOTATION MARK
-	$str =~ s/\xE2\x80\xA6/.../g;	# 85 - HORIZONTAL ELLIPSIS
-
-	$str =~ s/\xCB\x86/^/g;			# 88 - MODIFIER LETTER CIRCUMFLEX ACCENT
-
-	$str =~ s/\xE2\x80\x98/`/g;		# 91 - LEFT SINGLE QUOTATION MARK
-	$str =~ s/\xE2\x80\x99/'/g;		# 92 - RIGHT SINGLE QUOTATION MARK
-	$str =~ s/\xE2\x80\x9C/"/g;		# 93 - LEFT DOUBLE QUOTATION MARK
-	$str =~ s/\xE2\x80\x9D/"/g;		# 94 - RIGHT DOUBLE QUOTATION MARK
-	$str =~ s/\xE2\x80\xA2/*/g;		# 95 - BULLET
-	$str =~ s/\xE2\x80\x93/-/g;		# 96 - EN DASH
-	$str =~ s/\xE2\x80\x94/-/g;		# 97 - EM DASH
-
-	$str =~ s/\xE2\x80\xB9/</g;		# 8B - SINGLE LEFT-POINTING ANGLE QUOTATION MARK
-	$str =~ s/\xE2\x80\xBA/>/g;		# 9B - SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
-
-	zap_cp1252($str);
-
-    return $str;
+	return sub { return Text::Demoroniser::demoroniser( shift ) };
 }
 
 sub demoroniser_utf8 {
-	return sub { return _demoroniser_utf8( shift ) };
-}
-
-sub _demoroniser_utf8 {
-	my $str	= shift;
-    return  unless(defined $str);
-
-	$str =~ s/\xE2\x80\x9A/,/g;		# 82 - SINGLE LOW-9 QUOTATION MARK
-	$str =~ s/\xE2\x80\x9E/„/g;	# 84 - DOUBLE LOW-9 QUOTATION MARK
-	$str =~ s/\xE2\x80\xA6/…/g;	# 85 - HORIZONTAL ELLIPSIS
-
-	$str =~ s/\xCB\x86/ˆ/g;		# 88 - MODIFIER LETTER CIRCUMFLEX ACCENT
-
-	$str =~ s/\xE2\x80\x98/‘/g;	# 91 - LEFT SINGLE QUOTATION MARK
-	$str =~ s/\xE2\x80\x99/’/g;	# 92 - RIGHT SINGLE QUOTATION MARK
-	$str =~ s/\xE2\x80\x9C/“/g;	# 93 - LEFT DOUBLE QUOTATION MARK
-	$str =~ s/\xE2\x80\x9D/”/g;	# 94 - RIGHT DOUBLE QUOTATION MARK
-	$str =~ s/\xE2\x80\xA2/•/g;	# 95 - BULLET
-	$str =~ s/\xE2\x80\x93/–/g;	# 96 - EN DASH
-	$str =~ s/\xE2\x80\x94/—/g;	# 97 - EM DASH
-
-	$str =~ s/\xE2\x80\xB9/‹/g;	# 8B - SINGLE LEFT-POINTING ANGLE QUOTATION MARK
-	$str =~ s/\xE2\x80\xBA/›/g;	# 9B - SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
-
-	fix_cp1252($str);
-
-    return $str;
+	return sub { return Text::Demoroniser::demoroniser_utf8( shift ) };
 }
 
 1;
@@ -82,7 +30,7 @@ __END__
 
 =head1 NAME
 
-Data::FormValidator::Filters::Demoroniser - Data::FormValidator filter that allows you to demoronise a string.
+Data::FormValidator::Filters::Demoroniser - A Data::FormValidator filter that allows you to demoronise a string.
 
 =head1 SYNOPSIS
 
@@ -103,7 +51,7 @@ field values.
 
 =head1 API
 
-This module exports following filters:
+This module exports the following filters:
 
 =head2 demoroniser
 
@@ -124,7 +72,7 @@ tool.
 
 =head1 SEE ALSO
 
-L<Data::FormValidator>, L<Encode::ZapCP1252>
+L<Data::FormValidator>, L<Text::Demoroniser>
 
 =head1 THANK YOU
 
@@ -132,6 +80,8 @@ This module was written after Smylers spotted a problem in submitting a survey
 for the YAPC::Europe 2009 Perl Conference. Unfortunately the forms were not
 accepting the Microsoft "smart" characters and causing problems when submitting
 the form. So a big thanks to Smylers for inspiring this module.
+
+Also thanks to Brian Cassidy for further suggestions for improvements.
 
 =head1 AUTHOR
 
