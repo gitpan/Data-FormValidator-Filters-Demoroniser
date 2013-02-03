@@ -6,7 +6,7 @@ use Text::Demoroniser;
 
 BEGIN {
 	require Exporter;
-	$VERSION = '0.02';
+	$VERSION = '0.03';
 	@ISA = qw( Exporter );
 	@EXPORT = qw();
 	%EXPORT_TAGS = (
@@ -89,10 +89,9 @@ Barbie, E<lt>barbie@missbarbell.co.ukE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009 by Barbie
+Copyright (C) 2009-2013 by Barbie
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.7 or,
-at your option, any later version of Perl 5 you may have available.
+  This distribution is free software; you can redistribute it and/or
+  modify it under the Artistic Licence v2.
 
 =cut

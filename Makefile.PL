@@ -1,15 +1,25 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use 5.006;
+
 use ExtUtils::MakeMaker;
+
 WriteMakefile(
-    'NAME'			=> 'Data::FormValidator::Filters::Demoroniser',
-    'VERSION_FROM'	=> 'lib/Data/FormValidator/Filters/Demoroniser.pm',
-    'PREREQ_PM'		=> {
+    AUTHOR              => 'Barbie <barbie@cpan.org>',
+    NAME                => 'Data::FormValidator::Filters::Demoroniser',
+    VERSION_FROM        => 'lib/Data/FormValidator/Filters/Demoroniser.pm',
+    ABSTRACT            => 'A Data::FormValidator filter that allows you to demoronise a string',
+    NO_META             => 1,
+    PREREQ_PM => {
 
-        Text::Demoroniser   => 0,
-		Test::More	        => 0.70,	# for testing
-	},
-	NO_META			=> 1,
+        # for module
+        'Text::Demoroniser'     => 0,
 
-    ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
-      (ABSTRACT	=> 'A Data::FormValidator filter that allows you to demoronise a string',
-       AUTHOR	=> 'Barbie <barbie@cpan.org>') : ()),
+        # for testing
+        'IO::File'              => 0,
+        'Test::More'            => 0.70
+
+    },
 );

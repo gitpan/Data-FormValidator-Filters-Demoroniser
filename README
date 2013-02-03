@@ -1,5 +1,5 @@
-Data::FormValidator::Filters::Demoroniser
-=========================================
+Data-FormValidator-Filters-Demoroniser
+======================================
 
 DESCRIPTION
 
@@ -8,23 +8,24 @@ characters to normal characters from a string in form field values.
 
 DEPENDENCIES
 
-  Text::Demoroniser   >= 0
+  Text::Demoroniser
 
 Although not exactly a dependency, the following was the intended target for
 this distribution:
 
-  Data::FormValidator >= 0
+  Data::FormValidator
 
 For testing purposes, the following modules are required:
 
-  Test::More          >= 0.70
+  Test::More
 
 For testing purposes, the following modules are desireable, but not essential:
 
-  Test::Pod           >= 1.00
-  Test::Pod::Coverage >= 0.08
   Pod::Coverage
-  Test::CPAN::Meta    >= 1.13
+  Test::CPAN::Meta
+  Test::CPAN::Meta::JSON
+  Test::Pod
+  Test::Pod::Coverage
 
 INSTALLATION
 
@@ -54,16 +55,8 @@ RT system (http://rt.cpan.org/Public/Dist/Display.html?Name=Data-FormValidator-F
 However, it would help greatly if you are able to pinpoint problems or even 
 supply a patch. 
 
-Fixes are dependant upon their severity and my availablity. Should a fix not
+Fixes are dependent upon their severity and my availability. Should a fix not
 be forthcoming, please feel free to (politely) remind me.
-
-DSLIP
-
-  b - Beta testing
-  d - Developer
-  p - Perl-only
-  f - plain Functions, no references used
-  p - Standard-Perl: user may choose between GPL and Artistic
 
 AUTHOR
 
@@ -72,11 +65,7 @@ for Miss Barbell Productions http://www.missbarbell.co.uk.
 
 COPYRIGHT AND LICENSE
 
-  Copyright (C) 2009 Barbie for Miss Barbell Productions.
+  Copyright (C) 2009-2013 Barbie for Miss Barbell Productions.
 
-  This module is free software; you can redistribute it and/or 
-  modify it under the same terms as Perl itself.
-
-The full text of the licenses can be found in the Artistic file included with
-this distribution, or in perlartistic file available with your Perl 
-installation.
+  This distribution is free software; you can redistribute it and/or
+  modify it under the Artistic Licence v2.

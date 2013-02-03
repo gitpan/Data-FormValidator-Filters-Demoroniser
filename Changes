@@ -1,9 +1,20 @@
-# Changes log for Data::FormValidator::Filters::Demoroniser
+# Changes log for Data-FormValidator-Filters-Demoroniser
 
-0.02    11/08/2009
-	- abstracted guts out into Text::Demoroniser as suggested by Brian 
-	  Cassidy, for use by other non-DFV modules and applications.
+0.03    2013-02-03
+        - removed Artistic file.
+        - change file dates changed to meet W3CDTF standards.
+        - spelling fixes. (thanks to Florian Schlichting & Gregor Herrmann).
+        - License updated to Artistic License v2.
+        - updated META files, adding META.json.
+        - added minimum perl version (5.006).
+        - reworked Makefile.PL for clarity.
+        - updated test suite.
+        - added GitHub repo.
 
-0.01    10/08/2009
+0.02    2009-08-11
+        - abstracted guts out into Text::Demoroniser as suggested by Brian
+          Cassidy, for use by other non-DFV modules and applications.
+
+0.01    2009-08-10
         - Initial release.
-	- inspired by the demoroniser script
+        - inspired by the demoroniser script

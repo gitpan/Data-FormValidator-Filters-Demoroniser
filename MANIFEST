@@ -1,11 +1,11 @@
-Artistic
 Changes
 examples/examples.txt
 INSTALL
 lib/Data/FormValidator/Filters/Demoroniser.pm
 LICENSE
 Makefile.PL
-MANIFEST			This list of files
+MANIFEST
+META.json
 META.yml
 README
 t/01use.t
