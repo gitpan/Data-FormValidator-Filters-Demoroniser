@@ -1,4 +1,11 @@
-# Changes log for Data-FormValidator-Filters-Demoroniser
+Changes log for Data-FormValidator-Filters-Demoroniser
+======================================================
+
+0.04    2014-08-05
+        - fixed distribution name in metadata.
+        - package file updates.
+        - extended test suite.
+        - added use warnings.
 
 0.03    2013-02-03
         - removed Artistic file.
