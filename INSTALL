@@ -11,18 +11,18 @@ The easiest way to install is via CPAN, CPANPLUS or cpanminus:
 CPAN:
 
     % perl -MCPAN -e shell                    [as root]
-    > install Labyrinth
+    > install Data::FormValidator::Filters::Demoroniser
     > quit
 
 CPANPLUS:
 
     % cpanp
-    > i Labyrinth
+    > i Data::FormValidator::Filters::Demoroniser
     > q
 
 cpanminus:
 
-    % cpanm Labyrinth
+    % cpanm Data::FormValidator::Filters::Demoroniser
 
 See your local documentation ('perldoc CPAN', 'perldoc CPANPLUS' or 
 'perldoc cpanm') for further instructions on setting up and configuring your
